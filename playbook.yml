@@ -2,6 +2,9 @@
 - hosts: all
   connection: local
 
+  environment:
+    PATH: "/opt/homebrew/bin:{{ ans_env.PATH | default('/usr/bin:/bin:/usr/sbin:/sbin') }}"
+
   vars_files:
     - config.yml
 

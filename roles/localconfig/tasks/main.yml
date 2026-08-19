@@ -33,6 +33,7 @@
   npm:
     name: "{{ item }}"
     global: yes
+    executable: /opt/homebrew/bin/npm
   with_items: "{{ npm_items }}"
 
 - name: Remove all crap from Dock
