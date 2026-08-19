@@ -6,7 +6,6 @@ homebrew_installed_packages:
 homebrew_cask_apps:
   - 1password
   - ghostty
-  - visual-studio-code
 
 pip_items: []
 
