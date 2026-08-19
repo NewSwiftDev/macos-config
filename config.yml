@@ -2,16 +2,24 @@ homebrew_taps: []
 
 homebrew_installed_packages:
   - dockutil
+  - jq
+  - pre-commit
+  - node
 
 homebrew_cask_apps:
   - 1password
   - ghostty
+  - google-chrome
+  - firefox
+  - visual-studio-code
 
 pip_items: []
 
 gem_items: []
 
-npm_items: []
+npm_items:
+  - playwright
+
 
 dockitems_to_remove:
   - Safari
@@ -31,9 +39,25 @@ dockitems_to_remove:
   - App Store
   - iPhone Mirroring
   - System Settings
+  - Firefox
+  - Google Chrome
+  - Visual Studio Code
+  - Ghostty
 
 dockitems_to_persist:
   - name: Safari
     path: "/Applications/Safari.app"
     pos: 2
+  - name: Firefox
+    path: "/Applications/Firefox.app"
+    pos: 3
+  - name: Google Chrome
+    path: "/Applications/Google Chrome.app"
+    pos: 4 
+  - name: Visual Studio Code
+    path: "/Applications/Visual Studio Code.app"
+    pos: 5
+  - name: Ghostty
+    path: "/Applications/Ghostty.app"
+    pos: 6
 
