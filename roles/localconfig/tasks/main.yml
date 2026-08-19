@@ -37,7 +37,7 @@
 
 - name: Remove all crap from Dock
   shell: /opt/homebrew/bin/dockutil --remove '{{ item }}'
-  ignore_errors: true
+  failed_when: "shell_output.rc != 0 and shell_output.rc != 1"
   with_items: "{{ dockitems_to_remove }}"
 
 - name: Check if items in dock exist
