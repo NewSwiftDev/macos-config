@@ -52,6 +52,7 @@
 
 - name: Hide the Dock
   shell: defaults write com.apple.dock autohide -bool true
+  when: sysctl_vm_check.stdout == "0"
 
 - name: Resize the Dock
   shell: defaults write com.apple.dock tilesize -int 50
