@@ -72,8 +72,8 @@
 - name: Turn Off Automatically rearrange Spaces
   shell: defaults write com.apple.dock mru-spaces -bool false
 
-#- name: Restart the Dock
-  #shell: killall Dock
+- name: Show Menu bar background
+  shell: defaults write com.apple.universalaccess reduceTransparency -bool true
 
 - name: Restart the Dock using launchctl
   ansible.builtin.shell: launchctl stop com.apple.Dock.agent
