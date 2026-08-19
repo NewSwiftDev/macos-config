@@ -5,6 +5,12 @@
   vars_files:
     - config.yml
 
+  tasks:
+    - name: Check if running inside a Virtual Machine
+      ansible.builtin.command: sysctl -n kern.hv_vmm_present
+      register: sysctl_vm_check
+      changed_when: false
+
   roles:
     - role: geerlingguy.mac.homebrew
     - role: geerlingguy.mac.mas
