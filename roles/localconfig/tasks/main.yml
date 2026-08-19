@@ -74,6 +74,12 @@
 - name: Resize the Dock
   shell: defaults write com.apple.dock tilesize -int 50
 
+- name: Turn Off Show suggested and recent apps
+  shell: defaults write com.apple.dock show-recents -bool false
+
+- name: Turn Off Automatically rearrange Spaces
+  shell: defaults write com.apple.dock mru-spaces -bool false
+
 - name: Restart the Dock
   shell: killall Dock
 

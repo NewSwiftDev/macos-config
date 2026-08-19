@@ -15,18 +15,21 @@ gem_items: []
 npm_items: []
 
 dockitems_to_remove:
+  - Safari
+  - Messages
   - Mail
-  - Contacts
-  - Notes
-  - Reminders
   - Maps
   - Photos
-  - Messages
   - FaceTime
-  - News
-  - Podcasts
+  - Phone
+  - Calendar
+  - Contacts
+  - Reminders
+  - Notes
   - TV
-  - Safari
+  - Music
+  - Games
+  - App Store
 
 dockitems_to_persist:
   - name: Safari
