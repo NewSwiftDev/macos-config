@@ -39,6 +39,7 @@
   shell: /opt/homebrew/bin/dockutil --remove '{{ item }}'
   register: shell_output
   failed_when: shell_output.rc not in [0, 1]
+  changed_when: shell_output.rc == 0
   with_items: "{{ dockitems_to_remove }}"
 
 - name: Check if items in dock exist
