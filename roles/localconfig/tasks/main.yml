@@ -72,6 +72,3 @@
 
 - name: Update Homebrew
   shell: /opt/homebrew/bin/brew upgrade
-
-- name: Update Homebrew Cask
-  shell: /opt/homebrew/bin/brew cask upgrade
