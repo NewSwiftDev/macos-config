@@ -62,8 +62,13 @@
 - name: Turn Off Automatically rearrange Spaces
   shell: defaults write com.apple.dock mru-spaces -bool false
 
-- name: Restart the Dock
-  shell: killall Dock
+#- name: Restart the Dock
+  #shell: killall Dock
+
+- name: Restart the Dock using launchctl
+  ansible.builtin.shell: launchctl stop com.apple.Dock.agent
+  failed_when: false
+  changed_when: true
 
 - name: Update Homebrew
   shell: /opt/homebrew/bin/brew upgrade
