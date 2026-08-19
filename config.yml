@@ -29,6 +29,8 @@ dockitems_to_remove:
   - Music
   - Games
   - App Store
+  - iPhone Mirroring
+  - System Settings
 
 dockitems_to_persist:
   - name: Safari
