@@ -33,6 +33,9 @@ Commands:
 ## Merging a change to main into a branch
 
 ```bash
+git checkout main
+git pull
+git checkout <BRANCH>
 git merge main --no-commit --no-ff
 git reset HEAD config.yml
 git checkout HEAD -- config.yml
