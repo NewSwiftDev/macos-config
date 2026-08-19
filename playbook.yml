@@ -10,9 +10,16 @@
       ansible.builtin.command: sysctl -n kern.hv_vmm_present
       register: sysctl_vm_check
       changed_when: false
+    
+    - name: Include Homebrew role
+      ansible.builtin.include_role:
+        name: geerlingguy.mac.homebrew
 
-  roles:
-    - role: geerlingguy.mac.homebrew
-    - role: geerlingguy.mac.mas
+    - name: Include Mac App Store role (Physical hardware only)
+      ansible.builtin.include_role:
+        name: geerlingguy.mac.mas
       when: sysctl_vm_check.stdout == "0"
-    - role: localconfig
+
+    - name: Incloude local configuration role
+      ansible.builtin.include_role:
+        name: localconfig
