@@ -1,7 +1,7 @@
 # macos-config
 This directory contains the ansible code to setup and configure MacOS.
 
-# Install
+## Install
 The easiest way to install is to follow the following steps:
 
 1. Make sure you have signed into the Mac App Store.  This makes mas easier to deal with
@@ -29,3 +29,16 @@ Commands:
      ansible-galaxy collection install community.general --force
      osascript -e 'tell application "Finder"' -e 'set _b to bounds of window of desktop' -e 'end tell'
      ansible-playbook playbook.yml -i inventory -K
+
+## Merging a change to main into a branch
+
+```bash
+git checkout main
+git pull
+git checkout <BRANCH>
+git merge main --no-commit --no-ff
+git reset HEAD config.yml
+git checkout HEAD -- config.yml
+git commit -m "Merging main except config.yml"
+git push
+```
