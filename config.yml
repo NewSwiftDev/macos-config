@@ -1,0 +1,35 @@
+homebrew_taps: [] 
+
+homebrew_installed_packages:
+  - dockutil
+
+homebrew_cask_apps:
+  - 1password
+  - ghostty
+  - visual-studio-code
+
+pip_items: []
+
+gem_items: []
+
+npm_items: []
+
+dockitems_to_remove:
+  - Mail
+  - Contacts
+  - Notes
+  - Reminders
+  - Maps
+  - Photos
+  - Messages
+  - FaceTime
+  - News
+  - Podcasts
+  - TV
+  - Safari
+
+dockitems_to_persist:
+  - name: Safari
+    path: "/Applications/Safari.app"
+    pos: 2
+
