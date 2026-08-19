@@ -5,6 +5,7 @@ homebrew_installed_packages:
   - jq
   - pre-commit
   - node
+  - font-jetbrains-mono
 
 homebrew_cask_apps:
   - 1password
@@ -39,10 +40,6 @@ dockitems_to_remove:
   - App Store
   - iPhone Mirroring
   - System Settings
-  - Firefox
-  - Google Chrome
-  - Visual Studio Code
-  - Ghostty
 
 dockitems_to_persist:
   - name: Safari

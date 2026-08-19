@@ -27,29 +27,37 @@
 - name: Install Ruby Gems
   gem:
     name: "{{ item }}"
-  with_items: "{{ gem_items }}"
+  loop: "{{ gem_items }}"
 
 - name: Install Node Packages
   npm:
     name: "{{ item }}"
     global: yes
     executable: /opt/homebrew/bin/npm
-  with_items: "{{ npm_items }}"
+  loop: "{{ npm_items }}"
 
 - name: Remove all crap from Dock
   shell: /opt/homebrew/bin/dockutil --remove '{{ item }}'
   register: shell_output
   failed_when: shell_output.rc not in [0, 1]
   changed_when: shell_output.rc == 0
-  with_items: "{{ dockitems_to_remove }}"
+  loop: "{{ dockitems_to_remove }}"
 
 - name: Check if items in dock exist
   shell: /opt/homebrew/bin/dockutil --find '{{ item.name }}' || /opt/homebrew/bin/dockutil --add '{{ item.path }}'
-  with_items: "{{ dockitems_to_persist }}"
+  loop: "{{ dockitems_to_persist }}"
+  loop_control:
+    pause: 1
 
 - name: Fix order
   shell: /opt/homebrew/bin/dockutil --move '{{ item.name }}' --position {{ item.pos }}
-  with_items: "{{ dockitems_to_persist }}"
+  loop: "{{ dockitems_to_persist }}"
+  loop_control:
+    pause: 1
+  register: move_result
+  retries: 3
+  delay: 1
+  until: move_result.rc == 0
 
 - name: Hide the Dock
   shell: defaults write com.apple.dock autohide -bool true
