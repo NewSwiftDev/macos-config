@@ -43,7 +43,7 @@
   with_items: "{{ dockitems_to_remove }}"
 
 - name: Check if items in dock exist
-  shell: /opt/homebrew/bin/dockutil --find '{{ item.name }}' || dockutil --add '{{ item.path }}'
+  shell: /opt/homebrew/bin/dockutil --find '{{ item.name }}' || /opt/homebrew/bin/dockutil --add '{{ item.path }}'
   with_items: "{{ dockitems_to_persist }}"
 
 - name: Fix order
