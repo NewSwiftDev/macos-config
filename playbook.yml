@@ -6,6 +6,7 @@
     - config.yml
 
   roles:
-    - geerlingguy.mac.homebrew
-    - geerlingguy.mac.mas
-    - localconfig
+    - role: geerlingguy.mac.homebrew
+    - role: geerlingguy.mac.mas
+      when: sysctl_vm_check.stdout == "0"
+    - role: localconfig
