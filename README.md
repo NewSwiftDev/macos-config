@@ -26,5 +26,6 @@ Commands:
      git clone https://github.com/newswiftdev/macos-config
      cd macos-config
      ansible-galaxy install -r requirements.yml
+     ansible-galaxy collection install community.general --force
      osascript -e 'tell application "Finder"' -e 'set _b to bounds of window of desktop' -e 'end tell'
      ansible-playbook playbook.yml -i inventory -K
